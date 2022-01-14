@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.DGM260RMoblieGame1.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\Benjamin Hood\Documents\GitRepo\DGM260RSpring\DGM260RMoblieGame1\.idea\.idea.DGM260RMoblieGame1\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
