@@ -6,9 +6,14 @@ using UnityEngine;
 public class BreakableBehaviour : MonoBehaviour
 {
     public GameObject destroyedObj;
-    private void OnMouseDown()
+
+    private void OnTriggerEnter(Collider obj)
     {
-        Instantiate(destroyedObj, transform.position, transform.rotation);
-        Destroy(gameObject);
+        if (obj.tag == "Weapon")
+        {
+            Instantiate(destroyedObj, transform.position, transform.rotation);
+            Destroy(gameObject);
+            Debug.Log("Melee Hit");
+        }
     }
 }

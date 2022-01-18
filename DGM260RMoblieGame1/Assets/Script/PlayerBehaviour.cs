@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.IO.Compression;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Timeline;
+using UnityEngine.UIElements;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerBehaviour : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
@@ -20,6 +22,7 @@ public class PlayerControls : MonoBehaviour
 
      void Update()
     {
+        // Movement Controls and detection
         isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         velocity.y += gravity * Time.deltaTime;
 
@@ -44,6 +47,6 @@ public class PlayerControls : MonoBehaviour
         }
         
         controller.Move(velocity * Time.deltaTime);
-
     }
+     
 }
