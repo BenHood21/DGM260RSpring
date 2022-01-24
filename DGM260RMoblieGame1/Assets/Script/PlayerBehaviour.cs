@@ -16,12 +16,40 @@ public class PlayerBehaviour : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
-    private Vector3 velocity;
+    public float playerSpeed;
+    public Joystick joystick;
     public bool isGround;
+    
+    private float horizontalMove = 5f;
+    private Vector3 velocity;
+    private Rigidbody rb;
+    private Vector2 playerDirection;
 
-     void Update()
+    private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // Youtube Tutorial: TOUCH CONTROLS in Unity! by Brackeys
+        if (joystick.Horizontal >= .2f)
+        {
+            horizontalMove = playerSpeed;
+        }
+        else if (joystick.Horizontal <= -.2f)
+        {
+            horizontalMove = -playerSpeed;
+        }
+        else
+        {
+            horizontalMove = 0f;
+        }
+       
+        playerDirection = new Vector3(horizontalMove,0,0).normalized;
+        
+        
+        
         // Movement Controls and detection
         isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         velocity.y += gravity * Time.deltaTime;
@@ -48,5 +76,10 @@ public class PlayerBehaviour : MonoBehaviour
         
         controller.Move(velocity * Time.deltaTime);
     }
-     
+
+    private void FixedUpdate()
+    {
+        //Moblie touchmovement
+        rb.velocity = new Vector3(playerDirection.x * playerSpeed, 0, 0);
+    }
 }
