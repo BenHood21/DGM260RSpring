@@ -8,7 +8,8 @@ public class MeleeWeapon : WeaponBase
     
     public override void Attack()
     {
-        
+       anim.SetBool("Attacking", true);
+      
     }
     
     private void Start()
@@ -19,8 +20,8 @@ public class MeleeWeapon : WeaponBase
     private void Update()
     {
         // animation help from FPS Builders on Youtube
-        if (Input.GetButtonDown("Fire1")) anim.SetBool("Attacking", true);
-        else if (Input.GetButtonUp("Fire1")) anim.SetBool("Attacking", false);
+        if (Input.GetKeyDown(KeyCode.C)) anim.SetBool("Attacking", true);
+        else if (Input.GetKeyUp(KeyCode.C)) anim.SetBool("Attacking", false);
     }
    
 }
