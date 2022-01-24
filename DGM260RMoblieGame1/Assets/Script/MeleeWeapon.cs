@@ -11,6 +11,11 @@ public class MeleeWeapon : WeaponBase
        anim.SetBool("Attacking", true);
       
     }
+
+    public override void Sheath()
+    {
+        anim.SetBool("Attacking", false);
+    }
     
     private void Start()
     {

@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public CharacterController controller;
+    //public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -20,39 +20,61 @@ public class PlayerBehaviour : MonoBehaviour
     public Joystick joystick;
     public bool isGround;
     
-    private float horizontalMove = 5f;
+    private float sidetoSideMove = 5f;
+    private float frontBackMove = 5f;
     private Vector3 velocity;
+    private Vector3 playerDirectionSS ,playerDirectionFB;
     private Rigidbody rb;
-    private Vector2 playerDirection;
-
+    
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+       
     }
 
     void Update()
     {
         // Youtube Tutorial: TOUCH CONTROLS in Unity! by Brackeys
+        
+        // Side to side movement
         if (joystick.Horizontal >= .2f)
         {
-            horizontalMove = playerSpeed;
+            sidetoSideMove = playerSpeed;
+            Debug.Log("Right Movement");
         }
         else if (joystick.Horizontal <= -.2f)
         {
-            horizontalMove = -playerSpeed;
+            sidetoSideMove = -playerSpeed;
+            Debug.Log("Left Movement");
         }
         else
         {
-            horizontalMove = 0f;
+            sidetoSideMove = 0f;
         }
-       
-        playerDirection = new Vector3(horizontalMove,0,0).normalized;
+        
+        if (joystick.Vertical >= .2f)
+        {
+            frontBackMove = playerSpeed;
+            Debug.Log("Front Movement");
+        }
+        else if (joystick.Vertical <= -.2f)
+        {
+            frontBackMove = -playerSpeed;
+            Debug.Log("Back Movement");
+        }
+        else
+        {
+            frontBackMove = 0f;
+        }
+        
+        
+        playerDirectionFB = new Vector3(0,0,frontBackMove).normalized;
+        playerDirectionSS = new Vector3(sidetoSideMove,0,0).normalized;
         
         
         
         // Movement Controls and detection
-        isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        velocity.y += gravity * Time.deltaTime;
+       isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+       velocity.y += gravity * Time.deltaTime;
 
         if (isGround && velocity.y < 0)
         {
@@ -61,25 +83,10 @@ public class PlayerBehaviour : MonoBehaviour
             
         }
 
-        //Computer Controls for Testing
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
         if (Input.GetButtonDown("Jump") && isGround)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
         
-        controller.Move(velocity * Time.deltaTime);
-    }
-
-    private void FixedUpdate()
-    {
-        //Moblie touchmovement
-        rb.velocity = new Vector3(playerDirection.x * playerSpeed, 0, 0);
     }
 }
