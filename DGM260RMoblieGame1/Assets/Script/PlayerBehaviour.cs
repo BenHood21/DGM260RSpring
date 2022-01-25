@@ -19,13 +19,12 @@ public class PlayerBehaviour : MonoBehaviour
     public float playerSpeed;
     public Joystick joystick;
     public bool isGround;
+    public CharacterController controller;
     
     private float sidetoSideMove = 5f;
     private float frontBackMove = 5f;
     private Vector3 velocity;
-    private Vector3 playerDirectionSS ,playerDirectionFB;
-    private Rigidbody rb;
-    
+
     private void Start()
     {
        
@@ -33,11 +32,24 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
+        // Youtube Tutorial: First Person Movement in Unity by Brackeys
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
+        
         // Youtube Tutorial: TOUCH CONTROLS in Unity! by Brackeys
         
         // Side to side movement
         if (joystick.Horizontal >= .2f)
-        {
+        { 
             sidetoSideMove = playerSpeed;
             Debug.Log("Right Movement");
         }
@@ -65,10 +77,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             frontBackMove = 0f;
         }
-        
-        
-        playerDirectionFB = new Vector3(0,0,frontBackMove).normalized;
-        playerDirectionSS = new Vector3(sidetoSideMove,0,0).normalized;
         
         
         
