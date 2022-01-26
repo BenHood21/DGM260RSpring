@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: da69c8019531b1c45a4d364a8ac08f8c
+  - enabled: 1
+    path: Assets/Scenes/RageRoomScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/WeaponRoomScene.unity
+    guid: fba246cc46208064596a1af817e2d1f1
   m_configObjects: {}
