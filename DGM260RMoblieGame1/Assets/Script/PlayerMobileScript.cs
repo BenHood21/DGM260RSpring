@@ -16,7 +16,7 @@ public class PlayerMobileScript : MonoBehaviour
 
   private float horizontalMove = 5f;
   private float verticalMove = 5f;
-  private Rigidbody rb;
+  public Rigidbody rb;
   private Vector3 playerDirection;
   private Vector3 velocity;
     
@@ -61,6 +61,7 @@ public class PlayerMobileScript : MonoBehaviour
 
   void FixedUpdate()
   {
+
     rb.velocity = new Vector3(playerDirection.x * playerSpeed, 0, playerDirection.z);
 
 

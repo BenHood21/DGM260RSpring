@@ -273,7 +273,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.8, z: 1.2}
-  m_Children: []
+  m_Children:
+  - {fileID: 799104665}
   m_Father: {fileID: 455075958}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -654,16 +655,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac5f03e6af59b540944cf67e9dc9db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 10
   joystick: {fileID: 868750580}
   gravity: -9.81
   jumpHeight: 3
   groundCheck: {fileID: 1658502687}
-  groundDistance: 0.5
+  groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 72
   isGround: 0
+  rb: {fileID: 455075961}
 --- !u!4 &455075958
 Transform:
   m_ObjectHideFlags: 0
@@ -1285,12 +1287,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799104664}
-  m_LocalRotation: {x: -0.074604526, y: -0, z: -0, w: 0.99721324}
-  m_LocalPosition: {x: -0.6318485, y: -2.39988, z: 0.6204962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5265404, y: -0.647495, z: 0.21375258}
+  m_LocalScale: {x: 0.8333333, y: 0.55555564, z: 0.83333343}
   m_Children:
   - {fileID: 1904265060}
-  m_Father: {fileID: 963194228}
+  m_Father: {fileID: 154072781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &799104666
@@ -1414,14 +1416,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.074604526, y: -0, z: -0, w: 0.99721324}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalRotation: {x: 0.20911357, y: -0, z: -0, w: 0.9778913}
+  m_LocalPosition: {x: 0, y: 15.800001, z: -18.100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 799104665}
+  m_Children: []
   m_Father: {fileID: 455075958}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 8.557, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.141, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
