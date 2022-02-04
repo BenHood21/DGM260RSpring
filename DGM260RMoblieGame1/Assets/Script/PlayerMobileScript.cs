@@ -73,11 +73,6 @@ public class PlayerMobileScript : MonoBehaviour
       velocity.y = -2f;
       Debug.Log("On Ground");
     }
-
-    if (Input.GetButtonDown("Jump") && isGround)
-    {
-      velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-    }
   }
 } 
 
