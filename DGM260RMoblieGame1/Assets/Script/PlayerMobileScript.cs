@@ -13,7 +13,8 @@ public class PlayerMobileScript : MonoBehaviour
   public float groundDistance = 0.4f;
   public LayerMask groundMask;
   public bool isGround;
-
+  
+  private Animator anim;
   private float horizontalMove = 5f;
   private float verticalMove = 5f;
   public Rigidbody rb;
@@ -23,6 +24,7 @@ public class PlayerMobileScript : MonoBehaviour
   void Start()
   {
     rb = GetComponent<Rigidbody>();
+    anim = GetComponent<Animator>();
   }
 
   void Update()
@@ -33,27 +35,32 @@ public class PlayerMobileScript : MonoBehaviour
     if (joystick.Vertical >= .2f)
     {
       verticalMove = playerSpeed;
+      anim.SetBool("is Walking",true);
       Debug.Log("Front Movement");
     }
     if (joystick.Vertical <= -.2f)
     {
       verticalMove = -playerSpeed;
+      anim.SetBool("is Walking",true);
       Debug.Log("Back Movement");
     }
     if (joystick.Horizontal >= .2f)
     {
       horizontalMove = playerSpeed;
+      anim.SetBool("is Walking",true);
       Debug.Log("Right Movement");
     }
     else if (joystick.Horizontal <= -.2f)
     {
       horizontalMove = -playerSpeed;
+      anim.SetBool("is Walking",true);
       Debug.Log("Left Movement");
     }
     else
     {
       horizontalMove = 0f;
       verticalMove = 0f;
+      anim.SetBool("is Walking",false);
     }
 
     playerDirection = new Vector3(horizontalMove, 0, verticalMove).normalized;
