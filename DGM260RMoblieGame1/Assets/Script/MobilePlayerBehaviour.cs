@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript: MonoBehaviour
+public class MobilePlayerBehaviour: MonoBehaviour
 {
   public float maxPlayerSpeed;
   public Joystick joystick;
@@ -44,7 +44,7 @@ public class TestScript: MonoBehaviour
     //Debug.Log(playerSpeed);
     transform.position += transform.forward * playerSpeed * Time.deltaTime;
     //Debug.Log(joystick.DeadZone);
-
+    anim.SetTrigger("Walking_Trig");
   }
 } 
 

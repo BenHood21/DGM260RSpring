@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerMobileScript : MonoBehaviour
 {
+  //OLD Script
+  
+  
+  
   public float playerSpeed;
   public Joystick joystick;
   public float gravity = -9.81f;
