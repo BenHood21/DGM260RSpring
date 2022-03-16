@@ -25,7 +25,6 @@ public class MobilePlayerBehaviour: MonoBehaviour
     
   void Start()
   {
-  //  testVector = new Vector2();
     anim = GetComponent<Animator>();
   }
 
@@ -37,14 +36,24 @@ public class MobilePlayerBehaviour: MonoBehaviour
     //Debug.Log(targetAngle);
     transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
     directionVector = new Vector2(joystick.Horizontal,joystick.Vertical);
-    //Debug.Log(testVector.magnitude);
     magnitude = directionVector.magnitude;
-    // Debug.Log(magnitude);
+    Debug.Log(magnitude);
     playerSpeed = Mathf.Lerp(0f, maxPlayerSpeed, Mathf.InverseLerp(0,1,magnitude));
     //Debug.Log(playerSpeed);
     transform.position += transform.forward * playerSpeed * Time.deltaTime;
     //Debug.Log(joystick.DeadZone);
-    anim.SetTrigger("Walking_Trig");
+
+    if (magnitude > 1)
+    {
+      anim.SetTrigger("Walking_Trig");
+    }
+
+    if (magnitude < 1)
+    {
+      anim.SetTrigger("Standing_Trig");
+
+    }
+    
   }
 } 
 
