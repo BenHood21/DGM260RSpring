@@ -43,14 +43,15 @@ public class MobilePlayerBehaviour: MonoBehaviour
     transform.position += transform.forward * playerSpeed * Time.deltaTime;
     //Debug.Log(joystick.DeadZone);
 
-    if (magnitude > 1)
+    if (magnitude > .1)
     {
-      anim.SetTrigger("Walking_Trig");
+      anim.SetBool("Walking_Bool",true);
+      Debug.Log("Walking with Weapon");
     }
 
-    if (magnitude < 1)
+    if (magnitude < .1)
     {
-      anim.SetTrigger("Standing_Trig");
+      anim.SetBool("Walking_Bool",false);
 
     }
     
