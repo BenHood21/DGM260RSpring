@@ -46,14 +46,11 @@ public class MobilePlayerBehaviour: MonoBehaviour
     if (magnitude > .1)
     {
       anim.SetBool("Walking_Bool",true);
+      anim.SetTrigger("Walking_Trig");
       Debug.Log("Walking with Weapon");
     }
 
-    if (magnitude < .1)
-    {
-      anim.SetBool("Walking_Bool",false);
-
-    }
+   
     
   }
 } 
