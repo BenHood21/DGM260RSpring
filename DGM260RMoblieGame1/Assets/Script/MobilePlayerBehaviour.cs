@@ -15,7 +15,7 @@ public class MobilePlayerBehaviour: MonoBehaviour
   public CharacterController controller;
   private float magnitude;
   
-  private Animator anim;
+  public Animator anim;
   private float horizontalMove = 1f;
   private float verticalMove = 1f;
   private Vector3 playerDirection;
@@ -25,7 +25,7 @@ public class MobilePlayerBehaviour: MonoBehaviour
     
   void Start()
   {
-    anim = GetComponent<Animator>();
+    anim = GetComponentInChildren<Animator>();
   }
 
   void Update()
@@ -42,13 +42,9 @@ public class MobilePlayerBehaviour: MonoBehaviour
     //Debug.Log(playerSpeed);
     transform.position += transform.forward * playerSpeed * Time.deltaTime;
     //Debug.Log(joystick.DeadZone);
-
-    if (magnitude > .1)
-    {
-      anim.SetBool("Walking_Bool",true);
-      anim.SetTrigger("Walking_Trig");
-      Debug.Log("Walking with Weapon");
-    }
+    anim.SetFloat("Walking_F",magnitude);
+    
+    
 
    
     
