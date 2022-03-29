@@ -16,11 +16,5 @@ public class BreakableBehaviour : MonoBehaviour
             Debug.Log("Melee Hit");
         }
     }
-
-    public void destroy()
-    {
-        Instantiate(destroyedObj, transform.position, transform.rotation);
-        Destroy(gameObject);
-        Debug.Log("Break Button");  
-    }
+    
 }

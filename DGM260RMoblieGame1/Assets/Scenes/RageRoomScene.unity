@@ -124,18 +124,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &23003415 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8099307260663186701, guid: 7014c50c0270e7443ae69604fd3d39ef,
-    type: 3}
-  m_PrefabInstance: {fileID: 8099307260683830298}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20659ad6ddf04046ae541367d93e29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &120927971
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,45 +274,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867295827}
-        m_TargetAssemblyTypeName: BreakableBehaviour, Assembly-CSharp
-        m_MethodName: destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1740649470}
-        m_TargetAssemblyTypeName: BreakableBehaviour, Assembly-CSharp
-        m_MethodName: destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 23003415}
-        m_TargetAssemblyTypeName: BreakableBehaviour, Assembly-CSharp
-        m_MethodName: destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 866572688}
-        m_TargetAssemblyTypeName: BreakableBehaviour, Assembly-CSharp
-        m_MethodName: destroy
+      - m_Target: {fileID: 455075961}
+        m_TargetAssemblyTypeName: MobilePlayerBehaviour, Assembly-CSharp
+        m_MethodName: Swing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -692,30 +644,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1423372826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &866572688 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1238881200900485356, guid: 3909192a9c042ea4aa112b3893d2e464,
-    type: 3}
-  m_PrefabInstance: {fileID: 1238881200608897404}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20659ad6ddf04046ae541367d93e29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &867295827 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6061163603827305788, guid: 14a252d91cb17cd4ebc11b3ba3198828,
-    type: 3}
-  m_PrefabInstance: {fileID: 6061163603499077487}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20659ad6ddf04046ae541367d93e29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &868750580 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -1159,18 +1087,6 @@ Transform:
   m_Father: {fileID: 455075958}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1740649470 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8771557382970174270, guid: 13dff289d3e10234684c1652b2d81a9b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8771557382471047360}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20659ad6ddf04046ae541367d93e29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1837509263
 GameObject:
   m_ObjectHideFlags: 0

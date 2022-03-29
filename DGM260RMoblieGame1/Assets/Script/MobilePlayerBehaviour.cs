@@ -37,19 +37,22 @@ public class MobilePlayerBehaviour: MonoBehaviour
     transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
     directionVector = new Vector2(joystick.Horizontal,joystick.Vertical);
     magnitude = directionVector.magnitude;
-    Debug.Log(magnitude);
+   // Debug.Log(magnitude);
     playerSpeed = Mathf.Lerp(0f, maxPlayerSpeed, Mathf.InverseLerp(0,1,magnitude));
     //Debug.Log(playerSpeed);
     transform.position += transform.forward * playerSpeed * Time.deltaTime;
     //Debug.Log(joystick.DeadZone);
     anim.SetFloat("Walking_F",magnitude);
-    
-    
-
-   
-    
   }
+
+  public void Swing()
+  {
+    anim.SetTrigger("Attack_Trig");
+    Debug.Log("Swinging");
+  }
+
 } 
+
 
  
 
