@@ -47,7 +47,7 @@ public class MobilePlayerBehaviour: MonoBehaviour
 
   public void Swing()
   {
-    anim.SetTrigger("Attack_Trig");
+    anim.SetTrigger("Attacking_Trig");
     Debug.Log("Swinging");
   }
 
