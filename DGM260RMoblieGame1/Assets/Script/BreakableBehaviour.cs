@@ -6,6 +6,8 @@ using UnityEngine;
 public class BreakableBehaviour : MonoBehaviour
 {
     public GameObject destroyedObj;
+    public AudioSource impactSound;
+    public AudioSource breakingSound;
 
     private void OnTriggerEnter(Collider obj)
     {
@@ -14,6 +16,9 @@ public class BreakableBehaviour : MonoBehaviour
             Instantiate(destroyedObj, transform.position, transform.rotation);
             Destroy(gameObject);
             Debug.Log("Melee Hit");
+            impactSound.Play();
+            breakingSound.Play();
+            
         }
     }
     
