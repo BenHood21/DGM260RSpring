@@ -8,14 +8,10 @@ public class MobilePlayerBehaviour: MonoBehaviour
   public float maxPlayerSpeed;
   public Joystick joystick;
   public float gravity = -9.81f;
-  public Transform groundCheck;
-  public float groundDistance = 0.4f;
-  public LayerMask groundMask;
-  public bool isGround;
   public CharacterController controller;
   private float magnitude;
   
-  public Animator anim;
+  private Animator anim;
   private float horizontalMove = 1f;
   private float verticalMove = 1f;
   private Vector3 playerDirection;
